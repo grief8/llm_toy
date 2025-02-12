@@ -4,7 +4,7 @@ import logging
 import requests
 
 # Import the simulated secure operation from the OP-TEE trusted world simulation.
-from client.tee_operations import secure_ops
+from tee_operations import secure_ops
 
 logging.basicConfig(level=logging.INFO)
 
@@ -28,10 +28,9 @@ def main():
     
     # URL of the inference server (running with TLS)
     url = "https://localhost:5000/inference"
-    cert = ('../server/flask.crt', '../server/flask.key')
     
     try:
-        response = requests.post(url, json=payload, cert=cert, verify=False)
+        response = requests.post(url, json=payload, verify=False)
         response.raise_for_status()
         result = response.json()
         logging.info("Inference response received: %s", result)

@@ -9,11 +9,11 @@ targets:
   - target: /opt
     copy:
       - dirs:
-          - ../python-occlum
+          - ../scripts/python-occlum
   # below are python code and data
   - target: /bin
     copy:
-      - from: /root
+      - from: /root/server
         files: 
           - server.py
           - flask.crt

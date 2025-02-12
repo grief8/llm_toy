@@ -34,7 +34,6 @@ First, clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/grief8/llm_toy.git
-cd llm_toy
 ```
 
 ### 2. Run the Server
@@ -46,13 +45,14 @@ To run the server, you need to use Docker with Occlum. Follow these steps:
     ```bash
     docker run --rm -it --network host \
         --device /dev/sgx_enclave --device /dev/sgx_provision \
+        -v ./llm_toy:/root \
         occlum/occlum:latest-ubuntu20.04 bash
     ```
 
 2. Inside the Docker container, navigate to the `server` directory:
 
     ```bash
-    cd llm_toy/server
+    cd server
     ```
 
 3. Run the installation script to set up Python with Conda:
