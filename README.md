@@ -33,7 +33,7 @@ This project is a simple client-server application that demonstrates the use of 
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/llm_toy.git
+git clone https://github.com/grief8/llm_toy.git
 cd llm_toy
 ```
 
